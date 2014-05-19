@@ -1,0 +1,41 @@
+{
+  "name": "ScrapChat Plus",
+  "version": "0.3",
+  "description": "This make chat 20% cooler",
+  "homepage_url": "http://scratch.web1337.net/scraptfplus/",
+<<<<<<< HEAD
+  "background": { "scripts": ["task.js"] },
+=======
+  "background": { "scripts": ["bootstrap.js"] },
+>>>>>>> bb5985c479b3f08621939c2a1dfdb801d0669e1d
+
+  "content_scripts":[
+    {
+      "matches": ["http://dev.scrap.tf/chat-popup.php","https://dev.scrap.tf/chat-popup.php","http://dev.scrap.tf/chat-popup.php","https://dev.scrap.tf/chat-popup.php"],
+      "js": ["jquery-2.1.0.min.js","mod_chat.js"],
+      "css" : ["chatStyle.css"],
+      "run at" : "document_end"
+    },
+    {
+      "matches": ["http://dev.scrap.tf/settings","https://dev.scrap.tf/settings"],
+      "js": ["jquery-2.1.0.min.js","mod_settings.js"],
+      "run at" : "document_idle"
+    }],
+
+  "permissions" : [
+    "tabs",
+    "http://dev.scrap.tf/",
+    "https://dev.scrap.tf/"
+  ],
+
+  "web_accessible_resources": [
+    "jquery-2.1.0.min.js",
+    "pack.settings.js",
+    "pack.chat.js"],
+
+  "icons": { "16": "./img/EmblemPlus16.png",
+           "48": "./img/EmblemPlus48.png",
+          "128": "./img/EmblemPlus128.png" },
+
+  "manifest_version": 2
+}

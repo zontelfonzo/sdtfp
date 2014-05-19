@@ -1,0 +1,6 @@
+//alert("Potis Code Here");
+var footer_pack = "<div class='sdtfp-con-footer'> <style> .sdtfp-con-footer{background-color: #BBB; border-top-left-radius: 15px; border-top-right-radius: 15px; width:90%; margin-left: auto; margin-right: auto; text-align:center;} .sdtfp-link-footer{width:16.16%; display: inline; } .sdtfp-link-footer>a{color:#34495e;}</style><br> <div class='sdtfp-link-footer'> <a href='http://scrap.tf/weapons'>Weapon Banking</a> </div> | <div class='sdtfp-link-footer'> <a href='http://scrap.tf/hats'>Hat Banking</a> </div> | <div class='sdtfp-link-footer'> <a href='http://scrap.tf/keys'>Key Banking</a> </div> | <div class='sdtfp-link-footer'> <a href='http://scrap.tf/items'>Item Banking</a> </div> | <div class='sdtfp-link-footer'> <a href='http://scrap.tf/partswap'>MvM Part Swap</a> </div> | <div class='sdtfp-link-footer'> <a href='http://marketplace.tf/'>Buy Items With Cash</a> </div> <br><br>";
+$('footer').prepend(footer_pack);
+
+$(".sdtfp-con-footer").insertBefore('footer');
+$('.sdtfp-con-footer').css('margin-bottom',$('footer').css('height'));

@@ -1,0 +1,48 @@
+button{
+	color:#000;
+}
+.sdtfp-popMenu{
+	z-index:999;   
+	background-color: #fff;
+	color:#000;
+	position: absolute;
+	bottom:52px;
+	left: 0px;
+	width: 320px;
+	display: none;
+}
+
+.sdtfp-chatLine{
+	height:3px;
+	width:100%;
+	background-color:#151515;
+}
+
+.sdtfp-popPoint {
+	z-index:999;   
+	display: inherit;
+	position: relative;
+	width: 0;
+	height: 0;
+	left:156px;
+	top: 186px;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-top: 16px solid #FFF;
+}
+
+.smallLine{
+	display: none;
+}
+
+.chat-message{
+	overflow:initial;
+}
+
+.chat-settings>a:last-child{
+	color:#D00;
+}
+
+.sdtfp-hideme{
+	display: none;
+}

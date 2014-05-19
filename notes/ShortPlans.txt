@@ -1,0 +1,16 @@
+Features for Version 0.2
+
+[*] - -------------------------------------------------------------------------
+[*] - Bug fixes for Google Chrome
+[*] - Storage room beeps in localStorage array
+[*] - Fix settings page injection
+[*] - Fix settings
+[*] - Add Settings for custom room chat beeps
+[*] - Override/addon-to PlaySound to play a differnt sound based on room & settings 
+[*] - Add in chat menu
+
+Beta Notes
+[*] - -------------------------------------------------------------------------
+[*] - Set accesskey='P'
+[ ] - menu not relative to chat-tools
+[ ] - chatBuffer for slowmode
