@@ -346,7 +346,7 @@ Chat.SendChat2 = function(msg) {
 	}else if(msg.substr(0,8) == "/google "){
 		Chat.Socket.emit("chat", {"msg":"http://lmgtfy.com/?q="+msg.substr(8,msg.length-8).replace(/\+/g,"%2B").replace(/\s/g,"+")});
 	}else if(msg.substr(0,8) == "/Google "){
-		Chat.Socket.emit("chat", {"msg":"http://www.google.com/?q="+msg.substr(8,msg.length-8).replace(/\+/g,"%2B").replace(/\s/g,"+")});
+		Chat.Socket.emit("chat", {"msg":"http://www.google.com/?#q="+msg.substr(8,msg.length-8).replace(/\+/g,"%2B").replace(/\s/g,"+")});
 	}else{
 		if(Chat.IsConnected()){
 			Chat.Socket.emit("chat", {"msg":msg});
@@ -443,3 +443,4 @@ $("#message-limit").on('keyup',function(){
 
 /*Code to Run*/
 sdtfp.init();
+Chat.SwitchRoom('home');

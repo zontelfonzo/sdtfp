@@ -3,11 +3,8 @@
   "version": "0.3",
   "description": "This make chat 20% cooler",
   "homepage_url": "http://scratch.web1337.net/scraptfplus/",
-<<<<<<< HEAD
   "background": { "scripts": ["task.js"] },
-=======
-  "background": { "scripts": ["bootstrap.js"] },
->>>>>>> bb5985c479b3f08621939c2a1dfdb801d0669e1d
+
 
   "content_scripts":[
     {
