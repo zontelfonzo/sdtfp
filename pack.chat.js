@@ -22,6 +22,7 @@ sdtfp = {
 		sdtfp.chatLimit = localStorage.messageLimit*2;
 		$("#message-limit").attr('type','number');
 		$(".chat-settings>a:last").text('Save And Apply');
+		$(".ocordbox-title").on("click",function(e){$(this).parent().children(":last").slideToggle();});
 		if(localStorage['sdtfp-chatBeep'] != undefined){
 			try{
 				$("#chatBeep").attr('src',localStorage['sdtfp-chatBeep']);	
@@ -46,7 +47,29 @@ sdtfp = {
 		for(v in sdtfp.roomBeepList){
 			$(".sdtfp-audioBlock").append("<audio id='sdtfp-ae-"+v+"' src='"+sdtfp.roomBeepList[v]+"'>");
 		}
+		sdtfp.box_vidList();
 		Chat.Toast('Scrap.TF+ Loaded.','alert-success');		
+	},
+	box_vidList:function(){
+		$("#sdtfp-box-vidList").children(":last").html("");
+		var buffer = [];
+		for(var key in sdtfp.vidList){
+			var temp = []
+			temp[0] = key;
+			temp[1] = sdtfp.vidList[key];
+			buffer.push(temp);
+		}
+		/*buffer.sort(function(a,b){
+			var at = Object.keys(a);
+			var bt = Object.keys(b);
+			return at[0] - bt[0];
+		});*/
+		var hvar = "<table>";
+		for(var i=0;i<buffer.length;i++){
+			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td>"+buffer[i][1]+"</td>"+"</tr>";
+		}
+		var hvar = hvar+"</table>";
+		$("#sdtfp-box-vidList").children(":last").html(hvar);
 	},
 	chatLine:function(xvar,uid){
 		if(xvar == true){
@@ -151,7 +174,7 @@ sdtfp = {
 				$(".overwriteButtons").html("<span style='color:#C00;'>[v/"+tag+"] is unchanged</span>");
 				$(".overwriteButtons").attr("class","sdtfp-videoOverwriteStatusResault");
 			});
-		},
+		}
 	}
 };
 

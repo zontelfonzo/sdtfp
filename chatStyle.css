@@ -10,6 +10,7 @@ button{
 	left: 0px;
 	width: 320px;
 	display: none;
+	overflow: scroll;
 }
 
 .sdtfp-chatLine{
@@ -25,7 +26,7 @@ button{
 	width: 0;
 	height: 0;
 	left:156px;
-	top: 186px;
+	bottom: 0px;
 	border-left: 16px solid transparent;
 	border-right: 16px solid transparent;
 	border-top: 16px solid #FFF;
@@ -45,4 +46,17 @@ button{
 
 .sdtfp-hideme{
 	display: none;
+}
+.ocordbox{
+	border: 1px solid #000;
+}
+.ocordbox-title{
+	background-color: #9FE7FF;
+	color:#006;
+	font-weight: bold;
+}
+.ocordbox-content{
+	display: none;
+	max-height: 128px;
+	overflow-x: scroll;
 }
