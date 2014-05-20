@@ -59,11 +59,17 @@ sdtfp = {
 			temp[1] = sdtfp.vidList[key];
 			buffer.push(temp);
 		}
-		/*buffer.sort(function(a,b){
-			var at = Object.keys(a);
-			var bt = Object.keys(b);
-			return at[0] - bt[0];
-		});*/
+		buffer.sort(function(a,b){
+			var at = a[0];
+			var bt = b[0];
+			if(at < bt){
+				return -1;
+			}
+			if(at > bt){
+				return 1;
+			}
+			return 0;
+		});
 		var hvar = "<table>";
 		for(var i=0;i<buffer.length;i++){
 			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td>"+buffer[i][1]+"</td>"+"</tr>";
