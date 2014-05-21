@@ -50,6 +50,14 @@ sdtfp = {
 		sdtfp.box_vidList();
 		Chat.Toast('Scrap.TF+ Loaded.','alert-success');		
 	},
+	addVideoGUI:function(){
+		var rvar = "";
+		rvar = rvar+"<h4>Add Video</h4><br>";
+		rvar = rvar+"Tag:&nbsp; <input id='sdtfp-add-tag' style='color:#000;'></input><br>";
+		rvar = rvar+"Link: <input id='sdtfp-add-link' style='color:#000;'></input><br>";
+		rvar = rvar+"<button style='color:#000;'id='sdtfp-add-button'>Add</button>";
+		sdtfp.say(rvar,sdtfp.shortcuts.roomIn());
+	},
 	box_vidList:function(){
 		$("#sdtfp-box-vidList").children(":last").html("");
 		var buffer = [];
@@ -70,9 +78,10 @@ sdtfp = {
 			}
 			return 0;
 		});
-		var hvar = "<table>";
+		var hvar = "<table class='sdtfp-vidList-table'>";
+		var hvar = "<tr><td colspan='2'><button onclick='sdtfp.addVideoGUI();'>Add</button><button>Remove</button><button>Search</button></td></tr>";
 		for(var i=0;i<buffer.length;i++){
-			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td>"+buffer[i][1]+"</td>"+"</tr>";
+			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td><a href='"+buffer[i][1]+"'>"+buffer[i][1]+"</a></td>"+"</tr>";
 		}
 		var hvar = hvar+"</table>";
 		$("#sdtfp-box-vidList").children(":last").html(hvar);
@@ -314,6 +323,7 @@ Chat.SendChat2 = function(msg) {
 								sdtfp.shortcuts.videoOverwriteVideoPrompt(tag,vlink);
 							}
 						}
+						sdtfp.box_vidList();
 						break;
 					case "link":
 						var tag = t.shift();
@@ -328,6 +338,7 @@ Chat.SendChat2 = function(msg) {
 								sdtfp.say("Link: <a href="+vlink+" target='_blank'>"+tag+" - "+vlink+"</a>");
 							}
 						}
+						sdtfp.box_vidList();
 						break;
 					case "remove":
 						var tag = t.shift();
@@ -344,6 +355,7 @@ Chat.SendChat2 = function(msg) {
 								localStorage.setItem("sdtfp-vidList",JSON.stringify(sdtfp.vidList));
 							}
 						}
+						sdtfp.box_vidList();
 						break;
 					case "list":
 						var qwe = "<h2>List of all videos</h2>";
