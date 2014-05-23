@@ -48,6 +48,7 @@ sdtfp = {
 			$(".sdtfp-audioBlock").append("<audio id='sdtfp-ae-"+v+"' src='"+sdtfp.roomBeepList[v]+"'>");
 		}
 		sdtfp.box_vidList();
+		sdtfp.box_chatBeeps();
 		Chat.Toast('Scrap.TF+ Loaded.','alert-success');		
 	},
 	addVideoGUI:function(){
@@ -57,6 +58,24 @@ sdtfp = {
 		rvar = rvar+"Link: <input id='sdtfp-add-link' style='color:#000;'></input><br>";
 		rvar = rvar+"<button style='color:#000;'id='sdtfp-add-button'>Add</button>";
 		sdtfp.say(rvar,sdtfp.shortcuts.roomIn());
+	},
+	box_chatBeeps:function(){
+		$("#sdtfp-box-chatBeeps").children(":last").html("");
+		var buffer = [];
+		for(var key in sdtfp.roomBeepList){
+			var temp = []
+			temp[0] = key;
+			temp[1] = sdtfp.vidList[key];
+			buffer.push(temp);
+		}
+		var hvar = "<table class='sdtfp-chatBeeps-table'>";
+		var hvar = "<tr><td colspan='2'><button onclick='sdtfp.addVideoGUI();'>Add</button><button>Remove</button></td></tr>";
+		var hvar = hvar+"<tr>"+"<td>#room</td>"+"<td>URL to sound</td>"+"</tr>";
+		for(var i=0;i<buffer.length;i++){
+			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td><a href='"+buffer[i][1]+"'>"+buffer[i][1]+"</a></td>"+"</tr>";
+		}
+		var hvar = hvar+"</table>";
+		$("#sdtfp-box-chatBeeps").children(":last").html(hvar);
 	},
 	box_vidList:function(){
 		$("#sdtfp-box-vidList").children(":last").html("");
@@ -80,6 +99,7 @@ sdtfp = {
 		});
 		var hvar = "<table class='sdtfp-vidList-table'>";
 		var hvar = "<tr><td colspan='2'><button onclick='sdtfp.addVideoGUI();'>Add</button><button>Remove</button><button>Search</button></td></tr>";
+		var hvar = hvar+"<tr>"+"<td>Tag</td>"+"<td>Youtube URL</td>"+"</tr>";
 		for(var i=0;i<buffer.length;i++){
 			var hvar = hvar+"<tr>"+"<td>"+buffer[i][0]+"</td>"+"<td><a href='"+buffer[i][1]+"'>"+buffer[i][1]+"</a></td>"+"</tr>";
 		}
@@ -114,6 +134,8 @@ sdtfp = {
 		sdtfp.chatLimit = localStorage.messageLimit*2;
 		beepTriggers = (localStorage.beepTriggers) ? localStorage.beepTriggers.split(';') : [];
 		sdtfp.say("Reloading Settings");
+		sdtfp.box_vidList();
+		sdtfp.box_chatBeeps();
 		$("#chatBeep").attr('src',sdtfp.chatBeep);
 
 	},
@@ -221,7 +243,10 @@ Chat.LogChat = function(ava, name, text, room, userid, title, bg, level, badge){
 		if(text=="Slow down there!"){
 			$("#chat-input-txt").val(sdtfp.chatBuffer);
 		}
-		if(text.search("PM From") > 0){
+		if(text.search("PM From ") > 0){
+			room = "global";
+		}
+		if(text.search("Sent PM To") > 0){
 			room = "global";
 		}
 	}

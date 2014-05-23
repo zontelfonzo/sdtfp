@@ -4,6 +4,13 @@
   "description": "This make chat 20% cooler",
   "homepage_url": "http://scratch.web1337.net/scraptfplus/",
   "background": { "scripts": ["task.js"] },
+  "browser_action":{
+    "default_icon": {
+      "19": "./img/EmblemPlus19.png",
+      "38": "./img/EmblemPlus48.png"
+    },
+    "default_popup":"butt.html"
+  },
 
 
   "content_scripts":[
@@ -26,9 +33,12 @@
   ],
 
   "web_accessible_resources": [
+    "https://scratch.web1337.net/jsonp/?urMum=bot_stats",
+    "popup.js",
     "jquery-2.1.0.min.js",
     "pack.settings.js",
     "pack.chat.js"],
+  "content_security_policy": "script-src 'self' https://scratch.web1337.net/; object-src 'self'",
 
   "icons": { "16": "./img/EmblemPlus16.png",
            "48": "./img/EmblemPlus48.png",

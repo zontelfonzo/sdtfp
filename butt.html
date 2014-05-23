@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery-2.1.0.min.js"></script>
+</head>
+<style type="text/css">
+	html{
+		width: 400px;
+		height: 400px;
+	}
+	body{
+		font-family: Helvetica,sans-serif;
+		margin:0;
+		padding:0;
+		-webkit-font-smoothing: antialiased;
+		background-image: url("http://dev.scrap.tf/img/pattern.png");
+		background-color: #FF8;
+	}
+	.title{
+		background-color: #A0C5E8;
+		color: #496E91;
+		top:0px;
+		left:0px;
+		height: 64px;
+		width: 100%;
+		position: fixed;
+		box-shadow: 0px 0px 15px #000;
+		z-index: 99;
+	}
+	.content{
+		margin: 15px;
+		top:96px;
+		position: relative;
+		
+		left: 0px;
+		right: 0px;
+	}
+	.msg{
+		background-color: #A0C5E8;
+		color: #000;
+		top:64px;
+		left:0px;
+		height: 32px;
+		width: 100%;
+		position: fixed;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 32px; 
+		display: none;
+	}
+	#tb{
+		width:90%;
+		text-align: left;
+		border-spacing: 0px;
+    	border-collapse: separate;
+    	border: 1px solid #000;
+    	border-bottom: 0px solid #000;
+
+	}
+	.daRow{
+		width: 100%;
+	}
+	.bot_type{
+		width: 70%;
+		background-color: #a8d1ff;
+		border-bottom: 1px solid #000;
+	}
+	.bot_stat{
+		width: 30%;
+		background-color: #31d84f;
+		border-bottom: 1px solid #000;
+	}
+</style>
+<body>
+	<div class='title'>
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;Bot Status</h4>
+	</div>
+	<div class='msg'>
+		"Message"
+	</div>
+	<div class='content'>
+		<center>
+			<table id='tb'>
+			</table>
+		</center>
+	</div>
+</body>
+<script type="text/javascript" src='popup.js'></script>
+</html>

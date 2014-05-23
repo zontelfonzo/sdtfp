@@ -19,16 +19,15 @@ var genPopMenu = function(){
 	rvar = rvar+"<button id='sdtfp-btn-toggleChatLines'>Toggle Chat Lines</button><br>";
 	rvar = rvar+"</dl></dt>";
 
-	rvar = rvar+"<div class='ocordbox' id='sdtfp-box-vidList'>";
-	rvar = rvar+"<div class='ocordbox-title'>Video List</div>";
+	rvar = rvar+"<div class='ocordbox' id='sdtfp-box-chatBeeps'>";
+	rvar = rvar+"<div class='ocordbox-title'>Chap Beeps</div>";
 	rvar = rvar+"<div class='ocordbox-content'>";
 	rvar = rvar+"</div>";
 	rvar = rvar+"</div>";
 
-	rvar = rvar+"<div class='ocordbox'>";
-	rvar = rvar+"<div class='ocordbox-title'>Title Two</div>";
+	rvar = rvar+"<div class='ocordbox' id='sdtfp-box-vidList'>";
+	rvar = rvar+"<div class='ocordbox-title'>Video List</div>";
 	rvar = rvar+"<div class='ocordbox-content'>";
-	rvar = rvar+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec mauris in orci semper pellentesque. Suspendisse dui leo, tristique ac dignissim sed, semper id nisl. Curabitur mi magna, aliquet id placerat sit amet, mattis at mauris. Morbi massa est, imperdiet eget ante sit amet, rutrum venenatis diam. Nam tempus sapien in tellus tempor lobortis. Morbi sapien dui, placerat sed lacus in, porttitor ultricies purus. Phasellus rhoncus gravida justo a tincidunt. Duis faucibus metus quis tristique pretium.";
 	rvar = rvar+"</div>";
 	rvar = rvar+"</div>";
 
